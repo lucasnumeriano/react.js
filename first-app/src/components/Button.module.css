@@ -1,0 +1,15 @@
+.butaoClicavel {
+    background-color: #085bd6;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    height: 2.5em;
+    margin-top: 5em;
+    width: 12em;
+}
+
+.butaoClicavel:hover {
+    cursor: pointer;
+    opacity: .7;
+    transition: .4s ease;
+}
