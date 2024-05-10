@@ -1,20 +1,23 @@
 import './App.css';
-import Form from './components/Form';
-import Contador from './components/Contador';
-import Condicional from './components/Condicional';
-import List from './components/List';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/layouts/Navbar';
+import Footer from './components/layouts/Footer';
+import Home from './pages/Home';
+import Contato from './pages/Contato';
+import Sobre from './pages/Sobre';
 
 export default function App() {
-  const meusItens = ['Vini.Jr', 'Bellingham', 'Virtz', 'Mbappé', 'Kane', 'Rodrygo', 'Kross', 'Rudiger', 'Rodri', 'Lunin']
-
   return (
     <div className="App">
-      <h1>Forulários</h1>
-      <Form />
-      <Contador />
-      <Condicional />
-      <List itens={meusItens}/>
-      <List itens={[]}/>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/contato" element={<Contato />} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
